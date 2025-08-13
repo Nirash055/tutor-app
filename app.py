@@ -20,7 +20,7 @@ SYSTEM_PROMPT = """
 """
 
 # 从环境变量获取API密钥
-API_KEY = os.getenv('sk-1bbab15bb7e34c49989550da814c0526')
+API_KEY = 'sk-1bbab15bb7e34c49989550da814c0526'
 # API_KEY = os.getenv('DEEPSEEK_API_KEY')
 API_URL = "https://api.deepseek.com/v1/chat/completions"
 
