@@ -51,14 +51,26 @@ def tutor():
         "Content-Type": "application/json"
     }
     
+    # 模型和推理配置
+    model_version = "deepseek-chat"  # 使用通用对话模型
+    
+    # 深度思考配置
+    deep_thought_config = {
+        "step_deep": True,          # 启用逐步推理
+        "reasoning_depth": "high",   # 高深度推理
+        "chain_of_thought": True,    # 思维链推理
+        "pedagogical_focus": True    # 教学专注模式
+    }
+    
     payload = {
-        "model": "deepseek-chat",
+        "model": model_version,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": data['question']}
         ],
-        "temperature": 0.7,
-        "max_tokens": 500
+        "temperature": 0.4,        # 稍低的温度确保专注
+        "max_tokens": 400,          # 控制响应长度
+        **deep_thought_config       # 应用深度思考配置
     }
     
     try:
