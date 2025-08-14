@@ -68,7 +68,7 @@ def tutor():
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": data['question']}
         ],
-        "temperature": 0.4,        # 稍低的温度确保专注
+        "temperature": 0.8,        # 稍低的温度确保专注
         "max_tokens": 400,          # 控制响应长度
         **deep_thought_config       # 应用深度思考配置
     }
